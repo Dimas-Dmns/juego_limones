@@ -188,5 +188,31 @@ if(limonX+ANCHO_LIMON>personajeX && limonX<personajeX+ANCHO_PERSONAJE && limonY+
         }
     }
 
+    function reiniciar(){
+
+    vidas = 3;
+
+    puntaje = 0;
+
+    velocidadCaida = 200;
+
+    personajeX = canvas.width / 2;
+
+    limonX = canvas.width / 2;
+
+    limonY = 0;
+
+    mostrarEnSpan("txtVidas", vidas);
+
+    mostrarEnSpan("txtPuntaje", puntaje);
+
+    actualizarPantalla();
+
+    clearInterval(intervalo);
+
+    intervalo = setInterval(bajarLimon, velocidadCaida);
+
+}
+
 
 

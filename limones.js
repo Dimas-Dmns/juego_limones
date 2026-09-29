@@ -26,6 +26,8 @@ let vidas=3;
 
 let velocidadCaida=200;
 
+let intervalo;
+
 
 function iniciar() {
 
@@ -38,6 +40,8 @@ function iniciar() {
     dibujarLimon();
 
     aparecerLimon();
+
+    intervalo=setInterval(bajarLimon, velocidadCaida);
 
 }
 
@@ -179,6 +183,7 @@ if(limonX+ANCHO_LIMON>personajeX && limonX<personajeX+ANCHO_PERSONAJE && limonY+
             aparecerLimon();
             if(vidas==0){
                 alert("GAME OVER");
+                clearInterval(intervalo);
             }
         }
     }

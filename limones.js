@@ -147,6 +147,21 @@ if(limonX+ANCHO_LIMON>personajeX && limonX<personajeX+ANCHO_PERSONAJE && limonY+
         aparecerLimon();
         puntaje=puntaje+1;
         mostrarEnSpan("txtPuntaje",puntaje);
+        if(puntaje == 3){
+            velocidadCaida =150;
+            clearInterval(intervalo);
+            intervalo= setInterval(bajarLimon,velocidadCaida);
+        }
+        if(puntaje == 6){
+            velocidadCaida =100;
+            clearInterval(intervalo);
+            intervalo= setInterval(bajarLimon,velocidadCaida);
+        }
+        if(puntaje == 10){
+            alert("HAZ LIMONADA");
+            clearInterval(intervalo);
+            
+        }
     }
     }
 

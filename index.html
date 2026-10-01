@@ -1,27 +1,209 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="es">
+
 <head>
-  <title>Caza Estrellas</title>
- <link rel="stylesheet" href="limones.css">
- <script src="utili.js"></script>
+    <meta charset="UTF-8">
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="Atrapar Limones. Un juego arcade oscuro donde un vampiro debe atrapar los limones que caen del cielo."
+>
+
+<title>Atrapar Limones | Vampire Hunt</title>
+
+<link rel="stylesheet" href="limones.css">
+
+<script src="utili.js"></script>
+```
 
 </head>
+
 <body onload="iniciar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>Autor: Dimas Vera</h2>
-    <canvas id="areaJuego" width="600" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
-    </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()">Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
-    </div>
-  </div>
+
+```
+<main class="contenedor">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="decoracion-titulo">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <p class="eyebrow">NIGHT ARCADE • 01</p>
+
+        <h1>
+            ATRAPAR
+            <span>LIMONES</span>
+        </h1>
+
+        <p class="subtitulo">
+            <span class="colmillo">†</span>
+            Si del cielo te caen limones...
+            <span class="colmillo">†</span>
+        </p>
+
+        <div class="linea-gotica"></div>
+
+        <p class="autor">
+            CAZADOR: <strong>DIMAS VERA</strong>
+        </p>
+
+    </header>
+
+
+    <!-- JUEGO -->
+    <section class="zona-juego" aria-label="Zona de juego">
+
+        <div class="marco-juego">
+
+            <div class="esquina esquina-superior-izquierda"></div>
+            <div class="esquina esquina-superior-derecha"></div>
+            <div class="esquina esquina-inferior-izquierda"></div>
+            <div class="esquina esquina-inferior-derecha"></div>
+
+            <div class="indicador">
+                <span class="led"></span>
+                LIVE
+            </div>
+
+            <canvas
+                id="areaJuego"
+                width="600"
+                height="400"
+                aria-label="Área del juego Atrapar Limones"
+            ></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTADÍSTICAS -->
+    <section class="panel" aria-label="Estadísticas del juego">
+
+        <div class="estadistica">
+
+            <span class="icono">◆</span>
+
+            <div>
+
+                <span class="etiqueta">
+                    PUNTAJE
+                </span>
+
+                <strong id="txtPuntaje">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="separador-estadisticas"></div>
+
+
+        <div class="estadistica">
+
+            <span class="icono corazon">
+                ♥
+            </span>
+
+            <div>
+
+                <span class="etiqueta">
+                    VIDAS
+                </span>
+
+                <strong id="txtVidas">
+                    3
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTROLES -->
+    <section class="controles" aria-label="Controles del juego">
+
+        <p class="titulo-controles">
+
+            <span></span>
+
+            CONTROLES
+
+            <span></span>
+
+        </p>
+
+
+        <div class="botones">
+
+            <button
+                type="button"
+                onclick="moverIzquierda()"
+                class="boton boton-movimiento"
+            >
+                <span class="flecha">◀</span>
+                IZQUIERDA
+            </button>
+
+
+            <button
+                type="button"
+                onclick="moverDerecha()"
+                class="boton boton-movimiento"
+            >
+                DERECHA
+                <span class="flecha">▶</span>
+            </button>
+
+
+            <button
+                type="button"
+                onclick="reiniciar()"
+                class="boton boton-reinicio"
+            >
+                <span>↻</span>
+                REINICIAR
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-linea"></div>
+
+        <p>
+            ◈ VAMPIRE LEMON HUNT ◈
+        </p>
+
+        <small>
+            Atrapa los limones. Sobrevive a la noche.
+        </small>
+
+    </footer>
+
+</main>
+
+
 <script src="limones.js"></script>
+```
+
 </body>
+
 </html>

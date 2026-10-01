@@ -1,31 +1,1164 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Share+Tech+Mono&display=swap');
+
+/* =========================================================
+VARIABLES
+========================================================= */
+
+:root {
+
+
+--negro: #050505;
+--negro-suave: #0b0b0d;
+--gris-oscuro: #111114;
+--gris: #242429;
+--gris-claro: #8b8b91;
+--blanco: #dedee2;
+
+--rojo-oscuro: #48090d;
+--rojo: #8e1118;
+--rojo-brillante: #c51b24;
+--rojo-led: #ff2634;
+
+--sombra-roja: rgba(180, 15, 25, 0.28);
+--sombra-roja-fuerte: rgba(210, 15, 25, 0.55);
+
+--amarillo: #f3c928;
+
+--fuente-gotica: 'Cinzel', Georgia, serif;
+--fuente-tecnica: 'Share Tech Mono', monospace;
+
+
 }
+
+/* =========================================================
+RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+min-height: 100%;
+background: var(--negro);
+}
+
+body {
+
+
+margin: 0;
+
+min-height: 100vh;
+
+background:
+    radial-gradient(
+        circle at 50% 15%,
+        rgba(100, 10, 15, 0.12),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 50% 100%,
+        rgba(60, 60, 65, 0.08),
+        transparent 35%
+    ),
+    var(--negro);
+
+color: var(--blanco);
+
+font-family: var(--fuente-tecnica);
+
+text-align: center;
+
+overflow-x: hidden;
+
+
+}
+
+/* =========================================================
+EFECTO DE FONDO
+========================================================= */
+
+body::before {
+
+content: "";
+
+position: fixed;
+
+inset: 0;
+
+pointer-events: none;
+
+opacity: 0.18;
+
+background-image:
+    linear-gradient(
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px
+    );
+
+background-size: 40px 40px;
+
+mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 85%
+);
+
+z-index: -1;
+
+
+}
+
+/* =========================================================
+CONTENEDOR
+========================================================= */
 
 .contenedor {
-  max-width: 800px;
-  margin: 0 auto;
+
+
+width: min(900px, 94%);
+
+margin: 0 auto;
+
+padding: 42px 20px 30px;
+
+
 }
+
+/* =========================================================
+ENCABEZADO
+========================================================= */
+
+.encabezado {
+
+
+margin-bottom: 26px;
+
+position: relative;
+
+
+}
+
+.eyebrow {
+
+
+margin: 0 0 10px;
+
+color: var(--rojo-brillante);
+
+font-size: 11px;
+
+letter-spacing: 6px;
+
+font-weight: bold;
+
+
+}
+
+.encabezado h1 {
+
+
+margin: 0;
+
+font-family: var(--fuente-gotica);
+
+font-size: clamp(38px, 7vw, 66px);
+
+line-height: 0.95;
+
+letter-spacing: 4px;
+
+font-weight: 800;
+
+color: #e7e7e9;
+
+text-shadow:
+    0 0 2px #ffffff,
+    0 0 18px rgba(255, 255, 255, 0.08);
+
+
+}
+
+.encabezado h1 span {
+
+
+display: block;
+
+margin-top: 7px;
+
+color: var(--rojo);
+
+text-shadow:
+    0 0 5px rgba(160, 10, 20, 0.55),
+    0 0 22px rgba(150, 10, 20, 0.22);
+
+
+}
+
+.subtitulo {
+
+
+margin: 17px 0 13px;
+
+color: #77777d;
+
+font-size: 13px;
+
+letter-spacing: 2px;
+
+
+}
+
+.colmillo {
+
+
+color: var(--rojo-brillante);
+
+margin: 0 9px;
+
+font-size: 14px;
+
+
+}
+
+.linea-gotica {
+
+
+width: min(390px, 70%);
+
+height: 1px;
+
+margin: 0 auto 14px;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--rojo),
+        #777,
+        var(--rojo),
+        transparent
+    );
+
+box-shadow:
+    0 0 8px var(--sombra-roja);
+
+
+}
+
+.autor {
+
+
+margin: 0;
+
+color: #55555a;
+
+font-size: 10px;
+
+letter-spacing: 3px;
+
+
+}
+
+.autor strong {
+
+
+color: #77777c;
+
+font-weight: normal;
+
+
+}
+
+/* =========================================================
+DECORACIÓN SUPERIOR
+========================================================= */
+
+.decoracion-titulo {
+
+
+display: flex;
+
+justify-content: center;
+
+gap: 7px;
+
+margin-bottom: 16px;
+
+
+}
+
+.decoracion-titulo span {
+
+
+width: 5px;
+
+height: 5px;
+
+transform: rotate(45deg);
+
+background: var(--rojo);
+
+box-shadow:
+    0 0 8px var(--sombra-roja);
+
+
+}
+
+.decoracion-titulo span:nth-child(2) {
+
+
+width: 7px;
+
+height: 7px;
+
+background: var(--gris-claro);
+
+
+}
+
+/* =========================================================
+ZONA DEL JUEGO
+========================================================= */
+
+.zona-juego {
+
+
+display: flex;
+
+justify-content: center;
+
+margin: 26px 0 22px;
+
+
+}
+
+.marco-juego {
+
+
+position: relative;
+
+padding: 11px;
+
+background:
+    linear-gradient(
+        145deg,
+        #202024,
+        #070708 35%,
+        #151519 70%,
+        #050505
+    );
+
+border: 1px solid #3a3a3f;
+
+box-shadow:
+    0 0 0 1px #050505,
+    0 0 0 3px #18181b,
+    0 0 0 4px #35080c,
+    0 0 22px rgba(130, 5, 15, 0.16),
+    inset 0 0 25px rgba(0, 0, 0, 0.9);
+
+width: fit-content;
+
+max-width: 100%;
+
+
+}
+
+/* Línea LED exterior */
+
+.marco-juego::before {
+
+
+content: "";
+
+position: absolute;
+
+inset: -2px;
+
+border: 1px solid rgba(160, 15, 25, 0.55);
+
+pointer-events: none;
+
+box-shadow:
+    0 0 5px rgba(170, 10, 20, 0.35),
+    inset 0 0 5px rgba(170, 10, 20, 0.15);
+
+
+}
+
+/* =========================================================
+CANVAS
+========================================================= */
 
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
-  display: block;
-  margin: 20px auto;
+
+
+display: block;
+
+width: 600px;
+
+height: 400px;
+
+max-width: 100%;
+
+background-color: #0b0b0e;
+
+border: 2px solid #29292e;
+
+outline: 1px solid rgba(145, 12, 20, 0.65);
+
+box-shadow:
+    inset 0 0 25px rgba(0, 0, 0, 0.75),
+    0 0 10px rgba(120, 5, 15, 0.12);
+
+image-rendering: pixelated;
+
+
 }
+
+/* =========================================================
+INDICADOR LIVE
+========================================================= */
+
+.indicador {
+
+
+position: absolute;
+
+top: -12px;
+
+left: 18px;
+
+z-index: 5;
+
+padding: 4px 10px;
+
+background: #080808;
+
+border: 1px solid #3c3c41;
+
+color: #77777d;
+
+font-size: 9px;
+
+letter-spacing: 2px;
+
+
+}
+
+.led {
+
+
+display: inline-block;
+
+width: 5px;
+
+height: 5px;
+
+margin-right: 6px;
+
+border-radius: 50%;
+
+background: var(--rojo-brillante);
+
+box-shadow:
+    0 0 5px var(--rojo-led);
+
+animation: parpadeo 2s infinite;
+
+
+}
+
+@keyframes parpadeo {
+
+
+0%,
+45%,
+100% {
+    opacity: 1;
+}
+
+50%,
+90% {
+    opacity: 0.35;
+}
+
+
+}
+
+/* =========================================================
+ESQUINAS DEL MARCO
+========================================================= */
+
+.esquina {
+
+
+position: absolute;
+
+width: 18px;
+
+height: 18px;
+
+z-index: 4;
+
+pointer-events: none;
+
+
+}
+
+.esquina-superior-izquierda {
+
+
+top: 3px;
+left: 3px;
+
+border-top: 2px solid var(--rojo);
+border-left: 2px solid var(--rojo);
+
+
+}
+
+.esquina-superior-derecha {
+
+
+top: 3px;
+right: 3px;
+
+border-top: 2px solid var(--rojo);
+border-right: 2px solid var(--rojo);
+
+
+}
+
+.esquina-inferior-izquierda {
+
+
+bottom: 3px;
+left: 3px;
+
+border-bottom: 2px solid var(--rojo);
+border-left: 2px solid var(--rojo);
+
+
+}
+
+.esquina-inferior-derecha {
+
+
+bottom: 3px;
+right: 3px;
+
+border-bottom: 2px solid var(--rojo);
+border-right: 2px solid var(--rojo);
+
+
+}
+
+/* =========================================================
+PANEL DE PUNTAJE Y VIDAS
+========================================================= */
 
 .panel {
-  margin: 20px 0;
+
+
+width: min(600px, 100%);
+
+margin: 0 auto 25px;
+
+padding: 14px 20px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 48px;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(30, 30, 34, 0.65),
+        transparent
+    );
+
+border-top: 1px solid #29292d;
+
+border-bottom: 1px solid #29292d;
+
+
 }
 
-.botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
-  cursor: pointer;
+.estadistica {
+
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+min-width: 110px;
+
+justify-content: center;
+
+
+}
+
+.icono {
+
+
+color: var(--rojo);
+
+font-size: 15px;
+
+text-shadow:
+    0 0 7px var(--sombra-roja);
+
+
+}
+
+.corazon {
+
+
+color: var(--rojo-brillante);
+
+
+}
+
+.estadistica div {
+
+
+display: flex;
+
+flex-direction: column;
+
+align-items: flex-start;
+
+
+}
+
+.etiqueta {
+
+
+color: #55555b;
+
+font-size: 9px;
+
+letter-spacing: 3px;
+
+margin-bottom: 2px;
+
+
+}
+
+.estadistica strong {
+
+
+color: #dedee1;
+
+font-size: 21px;
+
+font-weight: normal;
+
+line-height: 1;
+
+
+}
+
+.separador-estadisticas {
+
+
+width: 1px;
+
+height: 32px;
+
+background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        #45454a,
+        transparent
+    );
+
+
+}
+
+/* =========================================================
+CONTROLES
+========================================================= */
+
+.controles {
+
+
+width: min(600px, 100%);
+
+margin: 0 auto;
+
+
+}
+
+.titulo-controles {
+
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 12px;
+
+margin: 0 0 14px;
+
+color: #5d5d62;
+
+font-size: 9px;
+
+letter-spacing: 4px;
+
+
+}
+
+.titulo-controles span {
+
+
+width: 35px;
+
+height: 1px;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #39393e
+    );
+
+
+}
+
+.titulo-controles span:last-child {
+
+
+background:
+    linear-gradient(
+        90deg,
+        #39393e,
+        transparent
+    );
+
+
+}
+
+.botones {
+
+
+display: grid;
+
+grid-template-columns: repeat(2, 1fr);
+
+gap: 10px;
+
+
+}
+
+/* =========================================================
+BOTONES
+========================================================= */
+
+.boton {
+
+
+position: relative;
+
+min-height: 47px;
+
+padding: 11px 15px;
+
+border: 1px solid #3a3a40;
+
+background:
+    linear-gradient(
+        145deg,
+        #17171a,
+        #09090b
+    );
+
+color: #bdbdc2;
+
+font-family: var(--fuente-tecnica);
+
+font-size: 11px;
+
+letter-spacing: 2px;
+
+cursor: pointer;
+
+transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+    0 4px 0 #050505;
+
+
+}
+
+.boton::before {
+
+
+content: "";
+
+position: absolute;
+
+top: 0;
+left: 12px;
+right: 12px;
+
+height: 1px;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #55555a,
+        transparent
+    );
+
+opacity: 0.45;
+
+
+}
+
+.boton:hover {
+
+
+color: #ffffff;
+
+border-color: var(--rojo);
+
+background:
+    linear-gradient(
+        145deg,
+        #211013,
+        #0b090a
+    );
+
+box-shadow:
+    0 0 7px rgba(160, 10, 20, 0.25),
+    0 0 16px rgba(160, 10, 20, 0.12),
+    inset 0 0 10px rgba(120, 5, 15, 0.08),
+    0 4px 0 #050505;
+
+transform: translateY(-2px);
+
+
+}
+
+.boton:active {
+
+
+transform: translateY(1px);
+
+box-shadow:
+    0 0 5px rgba(160, 10, 20, 0.2),
+    0 1px 0 #050505;
+
+
+}
+
+.flecha {
+
+
+color: var(--rojo-brillante);
+
+margin: 0 5px;
+
+font-size: 9px;
+
+
+}
+
+.cruz {
+
+
+color: var(--amarillo);
+
+margin-right: 6px;
+
+text-shadow:
+    0 0 5px rgba(243, 201, 40, 0.35);
+
+
+}
+
+/* Botón de acción principal */
+
+.boton-accion {
+
+
+border-color: #632126;
+
+color: #d4d4d7;
+
+box-shadow:
+    inset 0 0 12px rgba(120, 10, 18, 0.08),
+    0 4px 0 #050505;
+
+
+}
+
+.boton-accion:hover {
+
+
+border-color: var(--rojo-brillante);
+
+box-shadow:
+    0 0 8px rgba(190, 15, 25, 0.35),
+    0 0 20px rgba(190, 15, 25, 0.12),
+    0 4px 0 #050505;
+
+
+}
+
+/* Reinicio */
+
+.boton-reinicio {
+
+
+color: #77777d;
+
+border-color: #29292e;
+
+
+}
+
+.boton-reinicio:hover {
+
+
+color: #c7c7ca;
+
+border-color: #66666c;
+
+box-shadow:
+    0 0 8px rgba(150, 150, 160, 0.1),
+    0 4px 0 #050505;
+
+
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.footer {
+
+
+margin-top: 38px;
+
+color: #38383d;
+
+
+}
+
+.footer-linea {
+
+
+width: min(500px, 70%);
+
+height: 1px;
+
+margin: 0 auto 13px;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #29292d,
+        transparent
+    );
+
+
+}
+
+.footer p {
+
+
+margin: 0 0 6px;
+
+font-size: 9px;
+
+letter-spacing: 4px;
+
+color: #4a4a50;
+
+
+}
+
+.footer small {
+
+
+font-size: 8px;
+
+letter-spacing: 1px;
+
+color: #303035;
+
+
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media (max-width: 680px) {
+
+
+.contenedor {
+
+    width: 96%;
+
+    padding: 30px 8px 25px;
+}
+
+
+.encabezado h1 {
+
+    font-size: clamp(34px, 11vw, 52px);
+
+    letter-spacing: 2px;
+}
+
+
+.subtitulo {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.marco-juego {
+
+    padding: 7px;
+}
+
+
+canvas {
+
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 3 / 2;
+}
+
+
+.panel {
+
+    gap: 25px;
+
+    padding: 12px 8px;
+}
+
+
+.botones {
+
+    gap: 8px;
+}
+
+
+.boton {
+
+    min-height: 44px;
+
+    padding: 9px 7px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+}
+
+@media (max-width: 430px) {
+
+
+.botones {
+
+    grid-template-columns: 1fr;
+}
+
+
+.boton {
+
+    width: 100%;
+}
+
+
+.panel {
+
+    gap: 20px;
+}
+
+
+.estadistica {
+
+    min-width: 90px;
+}
+
+
+.encabezado {
+
+    margin-bottom: 20px;
+}
+
+
+}
+
+/* =========================================================
+ACCESIBILIDAD
+========================================================= */
+
+.boton:focus-visible {
+
+
+outline: 2px solid var(--rojo-brillante);
+
+outline-offset: 3px;
+
+
+}
+
+/* =========================================================
+REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+*,
+*::before,
+*::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+}
+
+
 }

@@ -8,9 +8,9 @@ let ctx = canvas.getContext("2d");
 
 const ALTURA_SUELO = 40;
 
-const ALTURA_PERSONAJE = 60;
+const ALTURA_PERSONAJE = 70;
 
-const ANCHO_PERSONAJE = 40;
+const ANCHO_PERSONAJE = 50;
 
 const ANCHO_LIMON = 20;
 
@@ -81,7 +81,7 @@ ctx.fillRect(
 function dibujarPersonaje() {
 
 
-ctx.fillStyle = "yellow";
+ctx.fillStyle = "red";
 
 ctx.fillRect(
     personajeX,
@@ -160,7 +160,7 @@ actualizarPantalla();
 function dibujarLimon() {
 
 
-ctx.fillStyle = "green";
+ctx.fillStyle = "blue";
 
 ctx.fillRect(
     limonX,
@@ -217,6 +217,7 @@ dibujarSuelo();
 dibujarPersonaje();
 
 dibujarLimon();
+
 
 
 }
@@ -404,7 +405,7 @@ clearInterval(intervalo);
 intervalo = null;
 
 
-alert("GAME OVER");
+alert("Juego Terminado");
 
 
 }
@@ -556,3 +557,12 @@ function (evento) {
 
 
 );
+
+
+function desaparecerPersonaje(){
+   ctx.clearRect(personajeX,
+    personajeY,
+    ANCHO_PERSONAJE,
+    ALTURA_PERSONAJE);
+
+}

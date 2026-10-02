@@ -8,9 +8,9 @@ let ctx = canvas.getContext("2d");
 
 const ALTURA_SUELO = 40;
 
-const ALTURA_PERSONAJE = 70;
+const ALTURA_PERSONAJE = 60;
 
-const ANCHO_PERSONAJE = 50;
+const ANCHO_PERSONAJE = 40;
 
 const ANCHO_LIMON = 20;
 
@@ -81,7 +81,7 @@ ctx.fillRect(
 function dibujarPersonaje() {
 
 
-ctx.fillStyle = "red";
+ctx.fillStyle = "yellow";
 
 ctx.fillRect(
     personajeX,
@@ -160,7 +160,7 @@ actualizarPantalla();
 function dibujarLimon() {
 
 
-ctx.fillStyle = "blue";
+ctx.fillStyle = "green";
 
 ctx.fillRect(
     limonX,
@@ -559,10 +559,3 @@ function (evento) {
 );
 
 
-function desaparecerPersonaje(){
-   ctx.clearRect(personajeX,
-    personajeY,
-    ANCHO_PERSONAJE,
-    ALTURA_PERSONAJE);
-
-}
